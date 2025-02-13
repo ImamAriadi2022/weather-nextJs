@@ -6,13 +6,9 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: var(--font-geist-sans);
 }
 
@@ -27,11 +23,39 @@
   }
 }
 
-.main {
+
+.wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbarBrand, .navLink {
+  color: white !important;
+}
+
+
+.mainContent {
+  flex: 1;
+  margin-top: 80px; /* Adjust this value to match the height of the header */
+  padding-bottom: 60px; /* Adjust this value to match the height of the footer */
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  padding-top: 20px;
+  flex-direction: column;
   gap: 32px;
-  grid-row-start: 2;
+  min-height: 80vh; /* Ensure main content takes at least 80% of the viewport height */
 }
 
 .main ol {
@@ -93,9 +117,13 @@ a.secondary {
 }
 
 .footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+  background-color: #222;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .footer a {
@@ -106,6 +134,22 @@ a.secondary {
 
 .footer img {
   flex-shrink: 0;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.card img {
+    width: 50px; /* Adjusted width */
+    height: 50px; /* Adjusted height */
+    margin: 0 auto;
 }
 
 /* Enable hover only on non-touch devices */
